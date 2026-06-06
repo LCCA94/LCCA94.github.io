@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Produto</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:"Roboto", sans-serif;
+    background:#f8f8f8;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+    display:flex;
+    gap:80px;
+    align-items:center;
+}
+
+/* IMAGEM */
+.galeria{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+#imagem{
+    width:100%;
+    max-width:420px;
+    border-radius:20px;
+    background:white;
+    padding:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+#imagem:hover{
+    transform:scale(1.03);
+}
+
+/* INFO */
+.info{
+    flex:1;
+}
+
+#nome{
+    font-size:40px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+/* PREÇO */
+.preco{
+    font-size:28px;
+    color:#007a56;
+    margin-bottom:30px;
+    font-weight:bold;
+}
+
+/* TAMANHO */
+.titulo-tamanho{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.tamanhos{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.tamanhos button{
+    width:60px;
+    height:60px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    background:white;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.tamanhos button:hover{
+    border:2px solid black;
+}
+
+.tamanhos button.ativo{
+    background:black;
+    color:white;
+    transform:scale(1.05);
+}
+
+/* TEXTO */
+#tamanhoSelecionado{
+    margin-bottom:25px;
+    color:#666;
+    font-size:14px;
+}
+
+/* BOTÃO */
+.btn{
+    width:100%;
+    padding:18px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.btn:hover{
+    background:#222;
+    transform:translateY(-2px);
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+
+    .container{
+        flex-direction:column;
+        gap:40px;
+        text-align:center;
+    }
+
+    .tamanhos{
+        justify-content:center;
+    }
+
+}
+/* ÁREA DAS CORES */
+.cores {
+    display: flex;
+    gap: 18px;
+    margin: 25px 0;
+    align-items: center;
+}
+
+/* BOTÕES QUADRADOS PREMIUM */
+.cor {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    border: 2px solid rgba(255,255,255,0.9);
+    cursor: pointer;
+    transition: all 0.35s ease;
+    position: relative;
+
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.18),
+        inset 0 2px 4px rgba(255,255,255,0.45),
+        inset 0 -3px 6px rgba(0,0,0,0.12);
+}
+
+/* BRILHO PREMIUM */
+.cor::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    width: 65%;
+    height: 30%;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.28);
+    filter: blur(1px);
+}
+
+/* HOVER */
+.cor:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow:
+        0 14px 30px rgba(0,0,0,0.22),
+        0 0 0 4px rgba(0,122,86,0.12);
+}
+
+/* SELECIONADA */
+.cor.ativo {
+    transform: scale(1.1);
+    border: 2px solid #111;
+    box-shadow:
+        0 16px 34px rgba(0,0,0,0.28),
+        0 0 0 5px rgba(0,122,86,0.18);
+}
+.toast{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%) translateY(-80px);
+    background:linear-gradient(135deg,#00573D,#00573D);
+    color:white;
+    padding:18px 30px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:600;
+    box-shadow:0 10px 30px rgba(0,200,83,.4);
+    z-index:9999;
+    opacity:0;
+    transition:all .4s ease;
+    pointer-events:none;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+.carrinho{
+    position:relative;
+    font-size:28px;
+    cursor:pointer;
+}
+
+#contador-carrinho{
+    position:absolute;
+    top:-8px;
+    right:-12px;
+    background:#00c853;
+    color:white;
+    min-width:20px;
+    height:20px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+.topo-produto{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:15px;
+}
+
+.carrinho-mini{
+    position:relative;
+    font-size:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.carrinho-mini:hover{
+    transform:scale(1.1);
+}
+
+#contador-carrinho{
+    position:absolute;
+    top:-8px;
+    right:-10px;
+    background:#00573D;
+    color:white;
+    min-width:22px;
+    height:22px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:bold;
+    box-shadow:0 4px 12px rgba(0,200,83,.35);
+}
+.carrinho-mini{
+    position:relative;
+    font-size:30px;
+    cursor:pointer;
+    text-decoration:none;
+    color:black;
+    transition:.3s;
+}
+
+.carrinho-mini:hover{
+    transform:scale(1.1);
+}
+.carrinho-mini{
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-decoration:none;
+    color:black;
+    position:relative;
+}
+.back-btn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    background: rgba(255,255,255,.95);
+    color: #00573D;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    border-radius: 50px;
+    border: 1px solid rgba(137,174,127,.3);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s ease;
+}
+
+.back-btn:hover{
+    background: #00573D;
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(0,87,61,.25);
+}
+
+
+</style>
+<link rel="stylesheet" href="darkmode.css?v=2">
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <a href="index.html" class="back-btn">
+    ← Voltar para a Página Inicial
+</a>
+    
+
+    <div class="galeria">
+        
+
+    <img id="imagem">
+
+    
+</div>
+
+
+
+    <!-- INFO -->
+    <div class="info">
+        
+<div class="produto-topo">
+
+<a href="carrinho.php" class="carrinho-mini">
+    🛒 <span id="contador-carrinho">0</span>
+</a>
+</div>
+
+        <h1 id="nome"></h1>
+        
+        
+        
+
+        <p class="preco" id="preco"></p>
+
+        <div class="quantidade">
+
+   <div class="quantidade">
+    <button class="qtd-btn" onclick="alterarQtd(-1)">−</button>
+
+    <span id="qtd" class="qtd-numero">1</span>
+
+    <button class="qtd-btn" onclick="alterarQtd(1)">+</button>
+    
+</div>
+
+        <p class="titulo-tamanho">Escolha o tamanho</p>
+
+        <div class="tamanhos">
+            <button onclick="selecionarTamanho(this)">P</button>
+            <button onclick="selecionarTamanho(this)">M</button>
+            <button onclick="selecionarTamanho(this)">G</button>
+            <button onclick="selecionarTamanho(this)">GG</button>
+        </div>
+
+        
+
+        
+        
+        
+
+
+        <p id="tamanhoSelecionado"></p>
+
+      <button class="btn" onclick="comprar()">
+    Adicionar ao carrinho
+</button>
+
+        <h2 style="margin-top:35px;">Escolha a cor</h2>
+
+        <div class="cores">
+           <div class="produto-info">
+
+
+    <!-- CORES -->
+    <div class="area-cor">
+        
+
+      
+<div class="cores">
+
+<button class="cor ativo"
+style="background:#5d3d2c;"
+onclick="selecionarCor(
+this,
+'marrom.png',
+'A Camiseta EcoWear Marrom possui um visual moderno e elegante. Produzida com tecido confortável e resistente, ela é perfeita para o dia a dia.'
+)">
+</button>
+
+<button class="cor"
+style="background:#1b5e20;"
+onclick="selecionarCor(
+this,
+'palmeiras.png',
+'A Camisa DryFit Verde foi criada para oferecer conforto, leveza e respirabilidade. Ideal para quem busca um visual esportivo.'
+)">
+</button>
+
+<button class="cor"
+style="background:#d2b48c;"
+onclick="selecionarCor(
+this,
+'areia.png',
+'A Camisa Bege Premium entrega sofisticação e conforto em um único produto com acabamento premium.'
+)">
+</button>
+
+
+<script src="script.js"></script>
+
+<div id="toast" class="toast">
+    ✅ Produto adicionado ao carrinho!
+</div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+    
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const produtos = {
+        1: {
+            nome: "Camiseta EcoWear",
+            preco: 99.90,
+            imagem: "marrom.png"
+            
+        },
+        2: {
+            nome: "Camisa DryFit",
+            preco: 119.90,
+            imagem: "camisavv.png"
+        },
+        3: {
+            nome: "Camisa Bege Premium",
+            preco: 129.90,
+            imagem: "novacamisaareia.png"
+        }  
+    };
+    
+    let itensCarrinho = 0;
+
+function atualizarCarrinho(){
+    document.getElementById("contador-carrinho").innerText = itensCarrinho;
+}
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    const produto = produtos[id];
+
+    fetch("produtos_api.php", {
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(dados => {
+        if(!dados.sucesso || !Array.isArray(dados.produtos)){
+            return;
+        }
+
+        const ativo = dados.produtos.some(item => String(item.id) === String(id));
+
+        if(!ativo){
+            document.body.innerHTML = "<h1 style='font-family:Arial;padding:40px;'>Produto nao encontrado</h1>";
+        }
+    })
+    .catch(() => {});
+
+    fetch("carrinho_count.php", {
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(dados => {
+        if(dados.sucesso){
+            itensCarrinho = dados.quantidade;
+            atualizarCarrinho();
+        }
+    })
+    .catch(() => {});
+
+    if(!produto){
+        document.body.innerHTML = "<h1>Produto não encontrado</h1>";
+        return;
+    }
+
+    document.getElementById("nome").innerText = produto.nome;
+    document.getElementById("preco").innerText = "R$ " + produto.preco.toFixed(2);
+    document.getElementById("imagem").src = produto.imagem;
+
+    let tamanhoEscolhido = "";
+
+    window.selecionarTamanho = function(botao){
+
+        document.querySelectorAll(".tamanhos button").forEach(b=>{
+            b.classList.remove("ativo");
+        });
+
+        botao.classList.add("ativo");
+        tamanhoEscolhido = botao.innerText;
+
+        document.getElementById("tamanhoSelecionado").innerText =
+            "Selecionado: " + tamanhoEscolhido;
+    }
+window.comprar = function(){
+
+    if(tamanhoEscolhido === ""){
+        alert("Escolha um tamanho!");
+        return;
+    }
+
+    const dadosCarrinho = new URLSearchParams();
+    dadosCarrinho.append("produto_id", id);
+    dadosCarrinho.append("quantidade", quantidade);
+    dadosCarrinho.append("tamanho", tamanhoEscolhido);
+
+    fetch("add_to_cart.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json"
+        },
+        body: dadosCarrinho
+    })
+    .then(resposta => resposta.json())
+    .then(dados => {
+        if(!dados.sucesso){
+            alert(dados.mensagem || "Não foi possível adicionar ao carrinho.");
+            return;
+        }
+
+        itensCarrinho = dados.quantidade;
+        atualizarCarrinho();
+
+        mostrarToast();
+        // VOZ FEMININA AO ADICIONAR NO CARRINHO
+        const mensagem = new SpeechSynthesisUtterance("Produto adicionado no carrinho");
+        mensagem.lang = "pt-BR";
+        mensagem.rate = 1;
+        mensagem.pitch = 1.2;
+
+        const vozes = speechSynthesis.getVoices();
+
+        const vozFeminina = vozes.find(voz =>
+            voz.lang === "pt-BR" &&
+            (
+                voz.name.toLowerCase().includes("female") ||
+                voz.name.toLowerCase().includes("feminina") ||
+                voz.name.toLowerCase().includes("maria") ||
+                voz.name.toLowerCase().includes("luciana") ||
+                voz.name.toLowerCase().includes("google")
+            )
+        );
+
+        if(vozFeminina){
+            mensagem.voice = vozFeminina;
+        }
+
+        speechSynthesis.cancel();
+        speechSynthesis.speak(mensagem);
+    })
+    .catch(() => {
+        alert("Não foi possível conectar ao carrinho.");
+    });
+
+}
+});
+
+function mostrarToast() {
+    const toast = document.getElementById("toast");
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2500);
+}
+
+window.selecionarCor = function(botao, imagem, descricao){
+
+    document.querySelectorAll(".cor").forEach(c=>{
+        c.classList.remove("ativo");
+    });
+
+    botao.classList.add("ativo");
+
+    // MUDA IMAGEM
+    document.getElementById("imagem").src = imagem;
+
+    // MUDA DESCRIÇÃO
+    document.getElementById("descricaoProduto").innerText = descricao;
+
+    let nomeCor = "";
+
+    if(imagem.includes("marrom")){
+        nomeCor = "Marrom";
+    } 
+    else if(imagem.includes("palmeiras")){
+        nomeCor = "Verde";
+    } 
+    else if(imagem.includes("areia")){
+        nomeCor = "Bege";
+    }
+
+    document.getElementById("corSelecionada").innerText =
+        "Cor selecionada: " + nomeCor;
+}
+let quantidade = 1;
+
+function alterarQtd(valor){
+    quantidade += valor;
+    if(quantidade < 1) quantidade = 1;
+    document.getElementById("qtd").innerText = quantidade;
+}
+
+if(localStorage.getItem("darkMode") === "on"){
+    document.body.classList.add("dark-mode");
+}
+
+function toggleDarkMode(){
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        localStorage.setItem("darkMode","on");
+    }else{
+        localStorage.setItem("darkMode","off");
+    }
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+<script src="darkmode.js?v=2"></script>
+</body>
+</html>

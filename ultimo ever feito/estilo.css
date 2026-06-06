@@ -1,0 +1,26 @@
+body{
+font-family: Arial;
+background:#f4f4f4;
+text-align:center;
+}
+
+header{
+background:black;
+color:white;
+padding:20px;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+
+.produto{
+border:1px solid #ccc;
+background:white;
+padding:20px;
+margin:20px;
+width:200px;
+display:inline-block;
+}

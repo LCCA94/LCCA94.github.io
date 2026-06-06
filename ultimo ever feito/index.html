@@ -1,0 +1,503 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <title>EverWear</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="darkmode.css?v=2">
+
+        <!-- FONTES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+        <script>
+            function modoEscuro() {
+                document.body.classList.toggle("dark");
+
+                const btn = document.querySelector(".toggle-btn");
+
+                if (document.body.classList.contains("dark")) {
+                    btn.innerHTML = "☀️";
+                } else {
+                    btn.innerHTML = "🌙";
+                }
+            }
+        </script>
+        
+
+    </head>
+
+    <body>
+    <div class="banner"></div>
+
+    <script src="//code.tidio.co/g6fgkebiyppxchdxs2bcyympxth7xwmn.js" async></script>
+
+    <!-- TELA DE BLOQUEIO -->
+    <div class="lock-screen" id="lockScreen">
+
+        <!-- SLIDES -->
+        <div class="slide active" style="background-image:url('luizsite.jpg')"></div>
+        <div class="slide" style="background-image:url('portuga2.png')"></div>
+        <div class="slide" style="background-image:url('loira2.png')"></div>
+            <div class="slide" style="background-image:url('alicia.jpg')"></div>
+
+        <!-- ESCURECER -->
+        <div class="dark-overlay"></div>
+
+        <!-- TEXTO -->
+        <div class="lock-content">
+
+            <h1>EVERWEAR</h1>
+
+            <p>Moda sustentável que muda o futuro 🌱</p>
+
+            <button class="enter-btn" onclick="entrarSite()">
+                ENTRAR
+            </button>
+
+
+        </div>
+
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <!-- PROMO -->
+        <div class="promo-bar">
+            <div class="promo-move">
+                <p>
+                    
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                          USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                         USE O CUPOM <span>EVER10</span> E GANHE 10% OFF • 
+                </p>
+            </div>
+        </div>
+
+        <section>
+
+            <!-- LOGO -->
+            <div class="logo">
+                <img src="everwearlogo.png" alt="EverWear">
+                <h2>EverWear</h2>
+            </div>
+
+            <!-- MENU -->
+            <nav class="EverWear">
+                <a href="#">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="#produtos">Produtos</a>
+                <a href="admin.php" id="adminNavLink" style="display:none;">Admin</a>
+            <a href="avaliaçoes.html">Avaliações</a>
+            <a 
+  href="https://www.google.com/maps?q=Estrada+do+Mendanha+3881+Campo+Grande+RJ+23078002" 
+  target="_blank"
+>
+  Localização
+</a>
+
+            
+            </nav>
+
+     
+            <!-- ICONES -->
+            <div class="icons">
+
+                <a href="carrinho.php" class="cart-home" aria-label="Abrir carrinho">
+                    &#128722;
+                </a>
+
+                <span class="conta-home" id="saudacaoConta">
+                    Olá, visitante
+                </span>
+
+                <a href="login.php" class="logout-home" id="botaoConta">
+                    Entrar
+                </a>
+
+                <button class="toggle-btn" onclick="modoEscuro()">
+                    🌙
+                </button>
+
+            </div>
+
+        </section>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="slider">
+
+            <div class="slide active" style="background-image:url('os4c.png')"></div>
+
+            <div class="slide" style="background-image:url('blusadry.jpg')"></div>
+
+            <div class="slide" style="background-image:url('blusaverdept2.jpg')"></div>
+
+        </div>
+
+        <div class="overlay"></div>
+
+        <div class="content">
+
+            <h1 class="title">
+                EVERWEAR
+            </h1>
+
+            <p class="subtitle">
+                Moda sustentável futuro planeta🌱
+            </p>
+
+            <div class="buttons">
+
+                <a href="#produtos" class="btn">
+                    Comprar
+                </a>
+
+            
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos">
+
+        <div class="grid-produtos">
+
+            <!-- PRODUTO 1 -->
+            <div class="produto" data-produto-id="1">
+
+                <span class="mais-vendido">
+                    MAIS VENDIDO
+                </span>
+                
+
+
+
+    <a href="produto.html?id=1">
+        <img src="novacamisamarrom.png" class="foto-produto">
+    
+    </a>
+
+                <h3 class="nome-camisa">
+                    Camiseta EcoWear
+                </h3>
+
+                <p class="preco">
+                    <span class="preco-antigo">
+                        R$129,90
+                    </span>
+                    <br>
+                    R$99,90
+                </p>
+
+                
+
+                <form method="post" action="add_to_cart.php">
+
+                    <input type="hidden" name="produto_id" value="1">
+                    <input type="hidden" name="produto" value="Camiseta EcoWear">
+
+                    <input type="hidden" name="preco" value="99.90">
+                    <input type="hidden" name="quantidade" value="1">
+
+                    <button type="submit" class="btn-comprar" onclick="comprarProduto()">
+                        🛒 Comprar Agora
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- PRODUTO 2 -->
+            <div class="produto" data-produto-id="2">
+
+
+                <a href="produto.html?id=2">
+        <img src="camisavv.png" class="foto-produto">
+    </a>
+
+
+                <h3 class="nome-camisa">
+                    Camisa DryFit   
+                </h3>
+
+                <p class="preco">
+                    <span class="preco-antigo">
+                        R$149,90
+                    </span>
+                    <br>
+                    R$119,90
+                </p>
+
+                <form method="post" action="add_to_cart.php">
+
+                    <input type="hidden" name="produto_id" value="2">
+                    <input type="hidden" name="produto" value="Camisa DryFit">
+
+                    <input type="hidden" name="preco" value="119.90">
+                    <input type="hidden" name="quantidade" value="1">
+
+                    <button type="submit" class="btn-comprar" onclick="comprarProduto()">
+                        🛒 Comprar Agora
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- PRODUTO 3 -->
+            <div class="produto" data-produto-id="3">
+
+    <a href="produto.html?id=3">
+        <img src="novacamisaareia.png" class="foto-produto">
+    </a>
+
+                <h3 class="nome-camisa">
+                    Camisa versao bege
+                </h3>
+
+                <p class="preco">
+                    <span class="preco-antigo">
+                        R$159,90
+                    </span>
+                    <br>
+                    R$129,90
+                </p>
+
+                <form method="post" action="add_to_cart.php">
+
+                    <input type="hidden" name="produto_id" value="3">
+                    <input type="hidden" name="produto" value="Camisa Bege Premium">
+
+                    <input type="hidden" name="preco" value="129.90">
+                    <input type="hidden" name="quantidade" value="1">
+
+                    <button type="submit" class="btn-comprar" onclick="comprarProduto()">
+                        🛒 Comprar Agora
+                    </button>
+                    
+
+                    
+
+                    
+
+                </form>
+
+            </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer style="text-align:center; padding:30px 30px; background:#00573D; color:white; margin-top:80px; width:100%;">
+
+        <div style="max-width:1200px; margin:auto;">
+
+            <h2 style="font-size:32px; margin-bottom:15px;">
+                EVERWEAR
+            </h2>
+
+            <p style="font-size:18px; margin-bottom:10px;">
+            Onde a moda que respeita o futuro 🌱
+            </p>
+
+            <p style="font-size:15px; opacity:0.8;">
+                © 2026 EverWear - Todos os direitos reservados
+            </p>
+            
+
+        </div>
+
+        <h2>EverWear © 2026</h2>
+
+        <p>
+            Moda sustentável 🌱
+        </p>
+
+        
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        
+
+    function entrarSite(){
+
+        const tela = document.getElementById("lockScreen");
+
+        tela.style.animation = "sumir 1s forwards";
+
+        setTimeout(() => {
+            tela.style.display = "none";
+        }, 1000);
+
+    }
+
+    /* SLIDER AUTOMÁTICO */
+
+    const slides = document.querySelectorAll(".lock-screen .slide");
+
+    let atual = 0;
+
+    setInterval(() => {
+
+        slides[atual].classList.remove("active");
+
+        atual++;
+
+        if(atual >= slides.length){
+            atual = 0;
+        }
+
+        slides[atual].classList.add("active");
+
+    }, 3000);
+
+    function comprarProduto(){
+
+        alert("Produto adicionado ao carrinho 🛒");
+
+    }
+    function entrarSite(){
+
+    const tela = document.querySelector(".lock-screen");
+
+    // animação
+    tela.style.animation = "sumir 0.8s forwards";
+
+    // salva sessão
+    sessionStorage.setItem("entrou", "true");
+
+    // remove tela
+    setTimeout(() => {
+        tela.style.display = "none";
+    }, 800);
+
+}
+
+/* VERIFICA SE JÁ ENTROU */
+window.addEventListener("DOMContentLoaded", () => {
+
+    const tela = document.querySelector(".lock-screen");
+
+    if(sessionStorage.getItem("entrou") === "true"){
+
+        tela.style.display = "none";
+
+    } else {
+
+        tela.style.display = "flex";
+    }
+
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    const saudacao = document.getElementById("saudacaoConta");
+    const botaoConta = document.getElementById("botaoConta");
+    const adminNavLink = document.getElementById("adminNavLink");
+
+    fetch("conta_atual.php", {
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(dados => {
+        if(!dados.sucesso){
+            return;
+        }
+
+        if(dados.logado && dados.usuario){
+            saudacao.textContent = "Olá, " + dados.usuario.nome;
+            botaoConta.textContent = "Sair";
+            botaoConta.href = "logout.php";
+            adminNavLink.style.display = dados.usuario.admin ? "" : "none";
+            return;
+        }
+
+        saudacao.textContent = "Olá, visitante";
+        botaoConta.textContent = "Entrar";
+        botaoConta.href = "login.php";
+        adminNavLink.style.display = "none";
+    })
+    .catch(() => {});
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    fetch("produtos_api.php", {
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(dados => {
+        if(!dados.sucesso || !Array.isArray(dados.produtos)){
+            return;
+        }
+
+        const ativos = new Set(dados.produtos.map(produto => String(produto.id)));
+
+        document.querySelectorAll("[data-produto-id]").forEach(card => {
+            if(!ativos.has(card.dataset.produtoId)){
+                card.remove();
+            }
+        });
+    })
+    .catch(() => {});
+});
+
+if(localStorage.getItem("darkMode") === "on"){
+    document.body.classList.add("dark-mode");
+}
+
+function toggleDarkMode(){
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        localStorage.setItem("darkMode","on");
+    }else{
+        localStorage.setItem("darkMode","off");
+    }
+}
+
+
+    </script>
+<script src="darkmode.js?v=2"></script>
+    </body>
+    </html>

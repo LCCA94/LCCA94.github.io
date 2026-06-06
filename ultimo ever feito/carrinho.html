@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Carrinho</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="darkmode.css?v=2">
+</head>
+
+<body>
+
+<h1>Seu Carrinho 🛒</h1>
+
+<div id="carrinho"></div>
+
+<h2 id="total"></h2>
+
+<button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
+
+<script src="script.js"></script>
+
+<script>
+carregarCarrinho();
+</script>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>✔ Produto adicionado!</h2>
+    <p id="popupTexto"></p>
+
+    <button onclick="fecharPopup()">Continuar comprando</button>
+    
+  </div>
+
+
+<script src="darkmode.js?v=2"></script>
+</body>
+</html>

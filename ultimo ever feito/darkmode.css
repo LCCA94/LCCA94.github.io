@@ -1,0 +1,195 @@
+html.dark,
+html.dark-mode,
+body.dark,
+body.dark-mode {
+    background: #101512 !important;
+    color: #f4f7f5 !important;
+    color-scheme: dark;
+}
+
+body.dark,
+body.dark-mode {
+    background: #101512 !important;
+}
+
+body.dark .shell,
+body.dark-mode .shell,
+body.dark .card,
+body.dark-mode .card,
+body.dark .panel,
+body.dark-mode .panel,
+body.dark .box,
+body.dark-mode .box,
+body.dark .stat,
+body.dark-mode .stat,
+body.dark .product-card,
+body.dark-mode .product-card,
+body.dark .summary,
+body.dark-mode .summary,
+body.dark .produto,
+body.dark-mode .produto,
+body.dark .info,
+body.dark-mode .info,
+body.dark .details,
+body.dark-mode .details,
+body.dark .success-shell,
+body.dark-mode .success-shell,
+body.dark .about-card,
+body.dark-mode .about-card,
+body.dark .product-section,
+body.dark-mode .product-section,
+body.dark .purpose,
+body.dark-mode .purpose,
+body.dark #imagem,
+body.dark-mode #imagem {
+    background: #1a211d !important;
+    color: #f4f7f5 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark p,
+body.dark span,
+body.dark label,
+body.dark strong,
+body.dark li,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label,
+body.dark-mode strong,
+body.dark-mode li {
+    color: #f4f7f5 !important;
+}
+
+body.dark a,
+body.dark-mode a {
+    color: #9ee6c3;
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select,
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: #111713 !important;
+    color: #f4f7f5 !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+body.dark .topbar,
+body.dark-mode .topbar,
+body.dark .topo,
+body.dark-mode .topo,
+body.dark .header,
+body.dark-mode .header {
+    background: #0c110f !important;
+    color: #f4f7f5 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.dark .btn,
+body.dark-mode .btn,
+body.dark button,
+body.dark-mode button {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.dark .toggle-btn,
+body.dark-mode .toggle-btn,
+body.dark [data-dark-toggle],
+body.dark-mode [data-dark-toggle] {
+    background: #f4f7f5 !important;
+    color: #10251d !important;
+}
+
+body.dark .linha,
+body.dark-mode .linha,
+body.dark .row,
+body.dark-mode .row,
+body.dark .badge,
+body.dark-mode .badge,
+body.dark .pill,
+body.dark-mode .pill,
+body.dark .etapa,
+body.dark-mode .etapa {
+    background: #111713 !important;
+    color: #f4f7f5 !important;
+}
+
+body.dark img,
+body.dark-mode img {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.dark .about-everwear,
+body.dark-mode .about-everwear {
+    background: #101512 !important;
+    color: #f4f7f5 !important;
+}
+
+body.dark .about-card,
+body.dark-mode .about-card,
+body.dark .purpose,
+body.dark-mode .purpose {
+    background: #1a211d !important;
+    color: #f4f7f5 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.dark .about-card p,
+body.dark-mode .about-card p,
+body.dark .about-card li,
+body.dark-mode .about-card li,
+body.dark .purpose p,
+body.dark-mode .purpose p {
+    color: #f4f7f5 !important;
+}
+
+body.dark .product-section,
+body.dark-mode .product-section {
+    background: #00573D !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.dark .product-section h2,
+body.dark-mode .product-section h2,
+body.dark .product-section p,
+body.dark-mode .product-section p,
+body.dark .product-section strong,
+body.dark-mode .product-section strong {
+    color: #ffffff !important;
+}
+
+body.dark .status.ativo,
+body.dark-mode .status.ativo {
+    background: #0b7a56 !important;
+    color: #ffffff !important;
+}
+
+body.dark .status.removido,
+body.dark-mode .status.removido {
+    background: #8a2d2d !important;
+    color: #ffffff !important;
+}
+
+body.dark td,
+body.dark-mode td,
+body.dark th,
+body.dark-mode th {
+    color: #f4f7f5 !important;
+}
+
+body.dark th,
+body.dark-mode th {
+    background: #111713 !important;
+}
